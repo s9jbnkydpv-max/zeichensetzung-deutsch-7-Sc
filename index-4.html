@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Satzzeichen-Werkstatt · 7c Deutsch (Sc)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2B2A33;
+  --paper:#FFFDF8;
+  --paper-2:#F3F1EA;
+  --mint:#2EC4B6;
+  --mint-d:#1E9E92;
+  --sun:#FFC93C;
+  --sun-d:#E0A800;
+  --sky:#4D96FF;
+  --sky-d:#2E6FD9;
+  --grape:#9B5DE5;
+  --grape-d:#7A3DC2;
+  --peach:#FF8C42;
+  --peach-d:#DB6C22;
+  --coral:#FF6B6B;
+  --coral-d:#E24C4C;
+  --leaf:#06D6A0;
+  --leaf-d:#04A87D;
+  --rose:#FF5D8F;
+  --rose-d:#DA3B6E;
+  --line:#E7E2D6;
+  --shadow: 0 6px 0 rgba(43,42,51,0.10);
+  --radius: 18px;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--paper);
+  background-image:
+    radial-gradient(circle at 92% 6%, rgba(46,196,182,0.10) 0, transparent 40%),
+    radial-gradient(circle at 6% 90%, rgba(255,140,66,0.10) 0, transparent 40%);
+  color:var(--ink);
+  font-family:'Nunito', sans-serif;
+  font-size:17px;
+  line-height:1.5;
+  min-height:100vh;
+  touch-action:manipulation;
+}
+h1,h2,h3,h4{font-family:'Fredoka',sans-serif; font-weight:600; margin:0 0 .4em 0; letter-spacing:.2px;}
+p{margin:.4em 0;}
+button{font-family:inherit; cursor:pointer;}
+.eyebrow{font-family:'Space Mono',monospace; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; opacity:.65;}
+
+header.top{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:12px 18px;
+  background:rgba(255,253,248,0.92); backdrop-filter:blur(6px);
+  border-bottom:2px solid var(--line);
+}
+.brand{display:flex; align-items:center; gap:10px; cursor:pointer;}
+.brand .badge{
+  font-family:'Fredoka'; font-weight:700; font-size:15px;
+  background:var(--ink); color:var(--paper); padding:6px 10px; border-radius:10px;
+  transform:rotate(-3deg);
+}
+.brand .title{font-family:'Fredoka'; font-weight:600; font-size:18px;}
+.class-tag{
+  font-family:'Space Mono',monospace; font-size:12.5px; background:var(--sun);
+  color:var(--ink); padding:5px 10px; border-radius:20px; white-space:nowrap;
+  border:1.5px solid rgba(43,42,51,0.15);
+}
+.header-actions{display:flex; gap:8px; align-items:center;}
+.icon-btn{
+  background:var(--paper-2); border:1.5px solid var(--line); border-radius:12px;
+  padding:8px 10px; font-size:15px; display:flex; align-items:center; gap:6px;
+}
+.icon-btn:active{transform:translateY(1px);}
+
+main{max-width:920px; margin:0 auto; padding:22px 16px 80px;}
+
+.kommi{width:60px;height:78px;position:relative;animation:bounce 2.6s ease-in-out infinite; flex-shrink:0;}
+.kommi .head{position:absolute;top:0;left:0;width:60px;height:52px;background:var(--ink);border-radius:50%;}
+.kommi .tail{position:absolute;bottom:0;left:16px;width:24px;height:32px;background:var(--ink);border-radius:0 60% 60% 60%;transform:rotate(12deg);}
+.kommi .eye{position:absolute;top:18px;width:10px;height:10px;background:#fff;border-radius:50%;animation:blink 4.2s infinite;}
+.kommi .eye.l{left:12px;} .kommi .eye.r{left:32px;}
+.kommi .eye::after{content:'';position:absolute;top:3px;left:3px;width:4px;height:4px;background:var(--ink);border-radius:50%;}
+.kommi .mouth{position:absolute;top:31px;left:20px;width:18px;height:9px;border-bottom:3.5px solid #fff;border-radius:0 0 20px 20px;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1);}96%{transform:scaleY(0.12);}}
+.kommi.small{width:34px;height:44px;}
+.kommi.small .head{width:34px;height:30px;}
+.kommi.small .tail{width:14px;height:18px;left:9px;}
+.kommi.small .eye{top:10px;width:6px;height:6px;} .kommi.small .eye.l{left:7px;} .kommi.small .eye.r{left:18px;}
+.kommi.small .eye::after{width:2.5px;height:2.5px;top:2px;left:2px;}
+.kommi.small .mouth{top:17px;left:11px;width:11px;height:5px;border-bottom-width:2.5px;}
+
+.hero{
+  display:flex; align-items:center; gap:20px; background:#fff;
+  border:2px solid var(--line); border-radius:24px; padding:22px 24px;
+  box-shadow:var(--shadow); margin-bottom:26px; flex-wrap:wrap;
+}
+.hero h1{font-size:28px;}
+.hero p{opacity:.8; max-width:520px;}
+.progress-wrap{margin-left:auto; text-align:center; min-width:120px;}
+.ring{width:78px;height:78px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 6px; font-family:'Space Mono'; font-weight:700; font-size:15px; background:conic-gradient(var(--leaf) calc(var(--pct,0)*1%), var(--paper-2) 0);}
+.ring span{background:#fff; width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
+.progress-wrap small{font-size:12px; opacity:.65;}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:16px;}
+.card{
+  position:relative; border-radius:22px; padding:20px; color:#fff; overflow:hidden;
+  box-shadow:var(--shadow); border:2px solid rgba(0,0,0,0.06);
+  display:flex; flex-direction:column; gap:8px; min-height:150px;
+}
+.card .icon{font-size:30px;}
+.card h3{font-size:19px; color:#fff;}
+.card p.desc{font-size:14px; opacity:.92; margin:0; min-height:38px;}
+.card .stamp{
+  position:absolute; top:14px; right:14px; width:34px;height:34px; border-radius:50%;
+  background:rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; font-size:16px;
+}
+.card .go{
+  margin-top:auto; align-self:flex-start; background:#fff; color:var(--ink);
+  border:none; border-radius:12px; padding:9px 16px; font-weight:800; font-size:14px;
+  font-family:'Fredoka';
+}
+.card.c-coral{background:linear-gradient(135deg,var(--coral),var(--coral-d));}
+.card.c-mint{background:linear-gradient(135deg,var(--mint),var(--mint-d));}
+.card.c-sun{background:linear-gradient(135deg,#FFD268,var(--sun-d)); color:var(--ink);}
+.card.c-sun h3{color:var(--ink);}
+.card.c-sky{background:linear-gradient(135deg,var(--sky),var(--sky-d));}
+.card.c-grape{background:linear-gradient(135deg,var(--grape),var(--grape-d));}
+.card.c-peach{background:linear-gradient(135deg,var(--peach),var(--peach-d));}
+.card.c-ink{background:linear-gradient(135deg,#4b4a58,var(--ink));}
+.mini-bar{height:6px; border-radius:4px; background:rgba(255,255,255,0.35); overflow:hidden;}
+.mini-bar i{display:block; height:100%; background:#fff; width:0%;}
+
+.section-label{margin:30px 0 12px; display:flex; align-items:center; gap:10px;}
+.section-label .line{flex:1; height:2px; background:var(--line);}
+
+.module-head{
+  display:flex; gap:16px; align-items:center; padding:20px; border-radius:22px; color:#fff;
+  margin-bottom:18px; box-shadow:var(--shadow);
+}
+.module-head h2{color:#fff; font-size:24px;}
+.module-head p{opacity:.92; margin:2px 0 0; font-size:14.5px;}
+.back-btn{
+  background:var(--paper-2); border:1.5px solid var(--line); border-radius:12px; padding:8px 14px;
+  font-weight:700; font-size:14px; margin-bottom:14px; display:inline-flex; gap:6px; align-items:center;
+}
+
+.tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;}
+.tab-btn{
+  background:#fff; border:2px solid var(--line); border-radius:14px; padding:9px 15px;
+  font-family:'Fredoka'; font-weight:600; font-size:14.5px; color:var(--ink); opacity:.6;
+}
+.tab-btn.active{opacity:1; border-color:var(--ink); background:var(--paper-2);}
+
+.box{background:#fff; border:2px solid var(--line); border-radius:20px; padding:20px; margin-bottom:16px;}
+.box h4{font-size:17px;}
+.rule-box{background:var(--paper-2); border:2px dashed var(--line); border-radius:16px; padding:16px 18px; margin:10px 0;}
+.rule-box .merksatz{font-family:'Fredoka'; font-weight:600; font-size:16px; margin-top:6px;}
+.example{
+  font-family:'Space Mono', monospace; font-size:14.5px; background:#fff; border:1.5px solid var(--line);
+  border-radius:10px; padding:8px 12px; margin:6px 0; display:inline-block;
+}
+
+.stufe-title{display:flex; align-items:center; gap:8px; margin:22px 0 8px;}
+.stufe-title .dot{width:26px;height:26px;border-radius:50%; background:var(--ink); color:#fff; font-size:13px; display:flex; align-items:center; justify-content:center; font-family:'Space Mono'; font-weight:700;}
+
+.task{
+  background:#fff; border:2px solid var(--line); border-radius:18px; padding:16px 18px; margin-bottom:14px;
+  position:relative;
+}
+.task.task-mastered{border-color:var(--leaf-d); background:#F3FDF9;}
+.mastered-badge{position:absolute; top:-11px; right:14px; background:var(--leaf); color:#fff; font-family:'Space Mono'; font-size:11px; font-weight:700; padding:3px 9px; border-radius:20px; box-shadow:0 2px 0 rgba(0,0,0,0.12);}
+.task .qtext{font-size:16.5px; line-height:1.7;}
+.task .tag{font-family:'Space Mono'; font-size:11px; text-transform:uppercase; letter-spacing:.06em; opacity:.5; margin-bottom:6px; display:block;}
+.slot{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:30px; height:30px; padding:0 6px; margin:0 3px; vertical-align:middle;
+  border-radius:8px; border:2px solid var(--sky); background:#EAF2FF; color:var(--sky-d);
+  font-weight:800; font-size:17px; font-family:'Space Mono';
+}
+.slot.active{background:var(--sky); color:#fff;}
+.slot.should{border-color:var(--leaf-d); box-shadow:0 0 0 3px rgba(6,214,160,0.25);}
+.slot.wrong{border-color:var(--rose-d); background:var(--rose); color:#fff;}
+.slot:disabled{opacity:1;}
+.slot:active{transform:scale(0.94);}
+
+.pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+.pill{
+  border:2px solid var(--line); background:var(--paper-2); border-radius:30px; padding:9px 16px;
+  font-weight:700; font-size:14.5px; font-family:'Fredoka';
+}
+.pill.selected{border-color:var(--ink); background:var(--ink); color:#fff;}
+.pill.correct-mark{border-color:var(--leaf-d); background:var(--leaf); color:#fff;}
+.pill.wrong-mark{border-color:var(--rose-d); background:var(--rose); color:#fff;}
+
+.opt-list{display:flex; flex-direction:column; gap:8px; margin-top:10px;}
+.opt{
+  text-align:left; border:2px solid var(--line); background:#fff; border-radius:12px; padding:11px 14px;
+  font-size:15px; display:flex; align-items:center; gap:10px; width:100%;
+}
+.opt .letter{font-family:'Space Mono'; font-weight:700; background:var(--paper-2); border-radius:6px; padding:2px 7px; font-size:13px;}
+.opt.selected{border-color:var(--ink); background:var(--paper-2);}
+.opt.correct-mark{border-color:var(--leaf-d); background:#E8FBF4;}
+.opt.wrong-mark{border-color:var(--rose-d); background:#FFEEF1;}
+
+.classify-item{border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; margin-bottom:10px; background:var(--paper);}
+.classify-item .itext{margin-bottom:8px; font-size:15.5px;}
+.cat-row{display:flex; flex-wrap:wrap; gap:6px;}
+.cat-btn{border:2px solid var(--line); background:#fff; border-radius:10px; padding:6px 12px; font-size:13.5px; font-weight:700;}
+.cat-btn.selected{border-color:var(--ink); background:var(--ink); color:#fff;}
+.cat-btn.correct-mark{border-color:var(--leaf-d); background:var(--leaf); color:#fff;}
+.cat-btn.wrong-mark{border-color:var(--rose-d); background:var(--rose); color:#fff;}
+
+.task-actions{display:flex; align-items:center; gap:10px; margin-top:12px; flex-wrap:wrap;}
+.btn{
+  border:none; border-radius:12px; padding:10px 18px; font-weight:800; font-family:'Fredoka'; font-size:14.5px;
+  background:var(--ink); color:#fff; box-shadow:0 4px 0 rgba(0,0,0,0.18);
+}
+.btn:active{transform:translateY(2px); box-shadow:none;}
+.btn.ghost{background:#fff; color:var(--ink); border:2px solid var(--line); box-shadow:none;}
+.btn.mint{background:var(--mint);}
+.feedback{font-weight:700; font-size:14.5px; display:none; align-items:center; gap:6px;}
+.feedback.ok{color:var(--leaf-d);} .feedback.bad{color:var(--rose-d);}
+.explain{font-size:14px; margin-top:8px; padding:10px 12px; background:var(--paper-2); border-radius:10px; display:none;}
+
+.hint-box{display:flex; align-items:flex-start; gap:8px; background:#FFF7E1; border:1.5px solid #F3D98B; border-radius:12px; padding:10px 12px; margin-top:10px; font-size:14px;}
+
+.level-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px;}
+.level-btn{flex:1; min-width:150px; border:2px solid var(--line); background:#fff; border-radius:16px; padding:14px; text-align:left;}
+.level-btn h5{margin:0 0 3px; font-family:'Fredoka';}
+.level-btn small{opacity:.7;}
+.level-btn.l-gruen{border-left:6px solid var(--leaf);}
+.level-btn.l-gelb{border-left:6px solid var(--sun-d);}
+.level-btn.l-rot{border-left:6px solid var(--rose);}
+.level-btn.active{background:var(--paper-2); border-color:var(--ink);}
+
+.status-box{background:#fff; border:2px solid var(--line); border-radius:16px; padding:12px 16px; margin-bottom:18px;}
+.status-box.status-complete{border-color:var(--leaf-d); background:#F3FDF9;}
+.status-bar{height:8px; border-radius:4px; background:var(--paper-2); overflow:hidden; margin-bottom:8px;}
+.status-bar i{display:block; height:100%; background:var(--leaf); width:0%; transition:width .3s ease;}
+.status-text{font-size:14px; font-weight:600;}
+.score-banner{border-radius:18px; padding:18px 20px; margin:16px 0; color:#fff; display:flex; align-items:center; gap:14px; background:linear-gradient(135deg,var(--leaf),var(--mint-d));}
+.score-banner h4{color:#fff; margin:0;}
+
+#confetti{position:fixed; inset:0; pointer-events:none; z-index:200; overflow:hidden;}
+.confetto{position:absolute; top:-20px; width:10px; height:14px; opacity:.9; animation:fall linear forwards;}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg); opacity:0.3;}}
+
+.exkurs{border:2px solid var(--peach); background:#FFF3EA; border-radius:18px; padding:18px 20px; margin:20px 0;}
+.exkurs .eyebrow{color:var(--peach-d);}
+.video-note{border:2px dashed var(--sky); background:#EFF5FF; border-radius:16px; padding:14px 16px; font-size:14px;}
+.video-block{margin:14px 0;}
+.video-block .vlabel{display:flex; align-items:center; gap:8px; font-family:'Fredoka'; font-weight:600; font-size:14.5px; margin-bottom:8px;}
+.video-frame{position:relative; width:100%; padding-top:56.25%; border-radius:16px; overflow:hidden; border:2px solid var(--line); background:#000;}
+.video-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+.video-block.mini .video-frame{border-radius:12px;}
+footer{text-align:center; padding:30px 16px; font-size:13px; opacity:.55;}
+.reset-link{background:none;border:none;color:inherit;text-decoration:underline;font-size:12.5px;opacity:.6;padding:0;}
+@media(max-width:600px){
+  .hero{flex-direction:column; align-items:flex-start;}
+  .progress-wrap{margin-left:0;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand" onclick="goHome()">
+    <div class="badge">7c</div>
+    <div>
+      <div class="title">Satzzeichen-Werkstatt</div>
+      <div class="eyebrow">Deutsch (Sc)</div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <span class="class-tag">7c · Deutsch (Sc)</span>
+    <button class="icon-btn" onclick="goHome()">🏠 Start</button>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  Satzzeichen-Werkstatt — erstellt für die Klasse 7c, Deutsch (Sc) · Gymnasium Schleswig-Holstein<br>
+  <button class="reset-link" onclick="resetProgress()">Meinen Fortschritt zurücksetzen</button>
+</footer>
+
+<div id="confetti"></div>
+
+<script>
+/* =========================================================
+   DATEN
+   ========================================================= */
+
+// Video-IDs von YouTube (nur die ID, nicht die ganze URL).
+// Bitte vor dem Einsatz im Unterricht selbst kurz gegenprüfen, ob Inhalt & Länge passen.
+const VIDEOS = {
+  intro: {id:'euRBniGGIPg', title:'Satzarten und Satzzeichen – ganz einfach erklärt'},
+  m1:    {id:'eiBEPeFHlMI', title:'Kommaregeln und Kommasetzung: Satzgefüge & Satzreihen'},
+  m2:    {id:'NGtRhT55ULA', title:'Kommasetzung bei Satzgefügen & Satzreihen – Regeln & Erklärung'},
+  m3:    {id:'BXv9-lBRUcg', title:'Kommasetzung bei Relativsätzen'},
+  m4:    {id:'aY_yR6kvQj0', title:'Subjekt- und Objektsätze unterscheiden'},
+  m5:    {id:'qMT1YT4YGzs', title:'Kommasetzung bei Infinitivgruppen'}
+};
+// Zusatzvideos für die Rechtschreib-Exkurse (optional)
+const EXKURS_VIDEOS = {
+  m1: {id:'BOBk7PwEeGY', title:'Satzarten und Satzschlusszeichen kennen (inkl. Großschreibung am Satzanfang)'},
+  m2: {id:'7hXNs5sYnT8', title:'das oder dass? – einfach erklärt | Lehrerschmidt'},
+  m3: {id:'2WnfBVgjaZA', title:'Was ist Nominalisierung (Substantivierung)?'},
+  m4: {id:'KQYsDgEH1nk', title:'Das oder Dass – Unterschied | musstewissen Deutsch'},
+  m5: {id:'FSt9Gewb1AM', title:'Anredepronomen – Groß- oder Kleinschreibung?'}
+};
+
+const LEVELS = [
+  {id:'gruen', label:'🟢 Mit Hilfe', desc:'Regel & Tipps sichtbar'},
+  {id:'gelb',  label:'🟡 Mittel', desc:'Regel auf Wunsch'},
+  {id:'rot',   label:'🔴 Profi', desc:'Ganz ohne Hilfe'}
+];
+
+const INTRO = {
+  id:'intro', color:'coral', icon:'❗',
+  title:'Satzschlusszeichen',
+  subtitle:'Punkt, Fragezeichen, Ausrufezeichen — die Basis für alles Weitere',
+  regel:[
+    "Jeder Satz braucht am Ende genau <b>ein</b> Schlusszeichen.",
+    "<b>Punkt (.)</b> — am Ende einer Aussage.<br><b>Fragezeichen (?)</b> — am Ende einer Frage.<br><b>Ausrufezeichen (!)</b> — am Ende eines Ausrufs, einer Aufforderung oder eines Befehls."
+  ],
+  merksatz:"Aussage → Punkt. Frage → Fragezeichen. Ausruf/Befehl → Ausrufezeichen.",
+  einstieg:{
+    type:'classify',
+    instruction:'🎮 Sortier-Spiel: Zu welchem Zeichen passt der Satz?',
+    cats:['Punkt (.)','Fragezeichen (?)','Ausrufezeichen (!)'],
+    items:[
+      {text:'Kommst du heute mit ins Stadion', cat:'Fragezeichen (?)'},
+      {text:'Pass auf, der Ball kommt', cat:'Ausrufezeichen (!)'},
+      {text:'Mia füttert jeden Morgen ihre Katze', cat:'Punkt (.)'},
+      {text:'Wie spät ist es eigentlich', cat:'Fragezeichen (?)'},
+      {text:'Lauf endlich los', cat:'Ausrufezeichen (!)'},
+      {text:'Der Film beginnt um acht Uhr', cat:'Punkt (.)'}
+    ]
+  },
+  pool:[
+    {type:'mc', q:'„Wie heißt dein Lieblingsspiel“ — welches Zeichen fehlt am Ende?', options:['Punkt','Fragezeichen','Ausrufezeichen'], correct:1, explain:'Es ist eine Frage, also Fragezeichen.'},
+    {type:'mc', q:'„Renn schneller, das Tor ist leer“ — welches Zeichen passt am besten?', options:['Punkt','Fragezeichen','Ausrufezeichen'], correct:2, explain:'Eine Aufforderung/ein Ausruf endet mit Ausrufezeichen.'},
+    {type:'classify', instruction:'Ordne zu:', cats:['Punkt (.)','Fragezeichen (?)','Ausrufezeichen (!)'], items:[
+      {text:'Warte auf mich', cat:'Ausrufezeichen (!)'},
+      {text:'Ich habe die Hausaufgaben vergessen', cat:'Punkt (.)'},
+      {text:'Wer hat das Fenster eingeschlagen', cat:'Fragezeichen (?)'}
+    ]}
+  ]
+};
+
+const MODULES = [
+{
+  id:'m1', color:'mint', icon:'🔗',
+  title:'Satzreihen',
+  subtitle:'Zwei Hauptsätze — wann kommt das Komma?',
+  regel:[
+    "Eine <b>Satzreihe</b> besteht aus zwei (oder mehr) gleichrangigen Hauptsätzen.",
+    "Stehen die Hauptsätze <b>ohne Verbindungswort</b> nebeneinander, kommt immer ein Komma.",
+    "Bei <b>und, oder, sowie, beziehungsweise</b> wird kein Komma gesetzt.",
+    "Bei <b>aber, doch, sondern, denn</b> steht immer ein Komma."
+  ],
+  merksatz:"Kein Wort oder „aber/doch/sondern/denn“ → Komma. „und/oder/sowie“ → kein Komma.",
+  beispiele:[
+    {t:'Paul zockt am Handy, Lea liest ein Buch.'},
+    {t:'Der Hund bellt laut und die Katze faucht zurück.'},
+    {t:'Nele mag Pizza, aber sie isst lieber Pasta.'}
+  ],
+  einstieg:{
+    type:'classify',
+    instruction:'🎮 Wortsortierer: Braucht das Verbindungswort ein Komma davor?',
+    cats:['Komma nötig','kein Komma'],
+    items:[
+      {text:'aber', cat:'Komma nötig'},
+      {text:'und', cat:'kein Komma'},
+      {text:'sondern', cat:'Komma nötig'},
+      {text:'sowie', cat:'kein Komma'},
+      {text:'denn', cat:'Komma nötig'},
+      {text:'oder', cat:'kein Komma'}
+    ]
+  },
+  stufen:[
+    [
+      {type:'comma', text:'Paul zockt am Handy{,} Lea liest ein Buch.', explain:'Ohne Verbindungswort → immer Komma.'},
+      {type:'comma', text:'Der Hund bellt laut{x} und die Katze faucht zurück.', explain:'„und“ verbindet zwei Hauptsätze → kein Komma.'},
+      {type:'comma', text:'Nele mag Pizza{,} aber sie isst lieber Pasta.', explain:'„aber“ → immer Komma.'}
+    ],
+    [
+      {type:'comma', text:'Max füttert die Fische{x} und Julia wischt das Aquarium.', explain:'„und“ → kein Komma.'},
+      {type:'comma', text:'Wir wollten campen{,} doch es regnete den ganzen Tag.', explain:'„doch“ → immer Komma.'},
+      {type:'comma', text:'Ich rufe dich an{x} oder ich schreibe dir eine Nachricht.', explain:'„oder“ → kein Komma.'}
+    ],
+    [
+      {type:'comma', text:'Er rannte zum Bus{,} doch der Bus fuhr schon los{x} und er musste laufen.', explain:'„doch“ → Komma, „und“ → kein Komma.'},
+      {type:'comma', text:'Die Mannschaft kämpfte{,} sie gab nicht auf{x} und am Ende gewann sie das Spiel.', explain:'Kein Wort → Komma; „und“ → kein Komma.'},
+      {type:'comma', text:'Ich rufe dich an{x} oder ich schreibe dir eine Nachricht{,} denn ich will dir unbedingt etwas erzählen.', explain:'„oder“ → kein Komma; „denn“ → Komma.'}
+    ]
+  ],
+  pool:[
+    {type:'comma', text:'Tom trainiert für den Marathon{,} Anna schwimmt jeden Tag.', explain:'Kein Verbindungswort → Komma.'},
+    {type:'mc', q:'Welches Wort verlangt IMMER ein Komma davor, wenn es zwei Hauptsätze verbindet?', options:['und','sondern','sowie'], correct:1, explain:'„sondern“ gehört zu den Wörtern mit Komma-Pflicht.'},
+    {type:'classify', instruction:'Braucht das Verbindungswort ein Komma?', cats:['Komma nötig','kein Komma'], items:[
+      {text:'beziehungsweise', cat:'kein Komma'},
+      {text:'doch', cat:'Komma nötig'},
+      {text:'denn', cat:'Komma nötig'}
+    ]},
+    {type:'comma', text:'Das Konzert beginnt gleich{x} und alle Fans jubeln schon.', explain:'„und“ → kein Komma.'},
+    {type:'gap', text:'___ Fußballspiel war richtig spannend.', options:['Das','das'], correct:'Das', explain:'Satzanfang → immer Großschreibung.'}
+  ],
+  exkurs:{
+    title:'Exkurs: Großschreibung am Satzanfang',
+    text:'Jeder Satz beginnt mit einem großgeschriebenen Wort — egal welche Wortart es sonst ist.',
+    tasks:[
+      {type:'gap', text:'___ Wetter wird morgen besser.', options:['Das','das'], correct:'Das', explain:'Satzanfang → groß.'},
+      {type:'gap', text:'Ich mag ___ Wetter heute nicht.', options:['Das','das'], correct:'das', explain:'Mitten im Satz, Artikel → klein.'},
+      {type:'gap', text:'___ gehen wir schwimmen.', options:['Heute','heute'], correct:'Heute', explain:'Satzanfang → groß.'}
+    ]
+  },
+  test:[
+    {type:'comma', text:'Ben spielt Gitarre{,} Mia singt dazu.', hint:'Steht ein Verbindungswort da? Nein → Komma.', explain:'Kein Verbindungswort → Komma.'},
+    {type:'comma', text:'Der Streamer geht online{x} und die Zuschauer strömen in den Chat.', hint:'„und“ verbindet zwei Hauptsätze.', explain:'„und“ → kein Komma.'},
+    {type:'comma', text:'Sie übte tagelang{,} doch beim Auftritt vergaß sie den Text.', hint:'„doch“ gehört zur Komma-Pflicht-Gruppe.', explain:'„doch“ → Komma.'},
+    {type:'comma', text:'Wir könnten ins Kino gehen{x} oder wir bleiben zu Hause und zocken{,} denn draußen regnet es.', hint:'Zwei Verbindungswörter — beide anders behandeln!', explain:'„oder“ → kein Komma, „denn“ → Komma.'},
+    {type:'classify', instruction:'Ordne zu:', cats:['Komma nötig','kein Komma'], items:[
+      {text:'sondern', cat:'Komma nötig'},
+      {text:'sowie', cat:'kein Komma'}
+    ], hint:'Denk an die vier Wörter mit Komma-Pflicht: aber, doch, sondern, denn.'},
+    {type:'gap', text:'___ Training war heute besonders hart.', options:['Das','das'], hint:'Steht das Wort am Satzanfang?', correct:'Das', explain:'Satzanfang → groß.'}
+  ]
+},
+{
+  id:'m2', color:'sun', icon:'🌦️',
+  title:'Adverbialsätze',
+  subtitle:'weil, obwohl, während, wenn & Co. — Nebensätze mit Komma',
+  regel:[
+    "Ein <b>Adverbialsatz</b> ist ein Nebensatz, der mit einem Wort wie <b>weil, obwohl, während, wenn, als, damit, sodass, nachdem, bevor</b> beginnt.",
+    "Nebensätze werden <b>immer</b> durch Komma vom Hauptsatz getrennt.",
+    "Steht der Nebensatz <b>mittendrin</b> (eingeschoben), braucht er <b>zwei</b> Kommas — eins davor, eins danach."
+  ],
+  merksatz:"Nebensatz erkannt? → Immer Komma davor (und ggf. danach)!",
+  einstieg:{
+    type:'classify',
+    instruction:'🎮 Signalwort-Check: Leitet das Wort einen Nebensatz ein?',
+    cats:['Nebensatz-Signal','kein Signal'],
+    items:[
+      {text:'weil', cat:'Nebensatz-Signal'},
+      {text:'und', cat:'kein Signal'},
+      {text:'obwohl', cat:'Nebensatz-Signal'},
+      {text:'aber', cat:'kein Signal'},
+      {text:'nachdem', cat:'Nebensatz-Signal'},
+      {text:'damit', cat:'Nebensatz-Signal'}
+    ]
+  },
+  stufen:[
+    [
+      {type:'comma', text:'Ich spiele heute nicht{,} weil mein Controller kaputt ist.', explain:'Nebensatz hinten → Komma davor.'},
+      {type:'comma', text:'Weil der Sturm immer stärker wurde{,} suchten die Wanderer eine Höhle.', explain:'Nebensatz vorn → Komma vor dem Hauptsatz.'},
+      {type:'comma', text:'Der Papagei schreit{,} wenn er Hunger hat.', explain:'Nebensatz hinten → Komma davor.'}
+    ],
+    [
+      {type:'comma', text:'Obwohl sie Höhenangst hatte{,} kletterte Mia mutig auf den Turm.', explain:'Nebensatz vorn → Komma.'},
+      {type:'comma', text:'Tom übt jeden Tag Klavier{,} damit er beim Vorspiel keine Fehler macht.', explain:'Nebensatz hinten → Komma davor.'},
+      {type:'comma', text:'Nachdem das Spiel vorbei war{,} klatschten sich alle Spieler ab{x} und gingen nach Hause.', explain:'Nebensatz vorn → Komma; „und“ danach → kein Komma.'}
+    ],
+    [
+      {type:'comma', text:'Der Hund{,} weil er so aufgeregt war{,} rannte dreimal um den Garten.', explain:'Eingeschobener Nebensatz → zwei Kommas.'},
+      {type:'comma', text:'Meine Schwester{,} obwohl sie erst neun ist{,} schlägt mich oft beim Schach.', explain:'Eingeschoben → zwei Kommas.'},
+      {type:'comma', text:'Wir brachen auf{,} sobald die Sonne aufging{,} und wanderten den ganzen Tag.', explain:'Nebensatz eingeschoben → zwei Kommas; „und“ danach → kein Komma.'}
+    ]
+  ],
+  pool:[
+    {type:'comma', text:'Als der Schiedsrichter pfiff{,} stürmten alle aufs Feld.', explain:'Nebensatz vorn → Komma.'},
+    {type:'mc', q:'Welches Wort leitet KEINEN Nebensatz ein?', options:['sodass','bevor','oder'], correct:2, explain:'„oder“ verbindet Hauptsätze, ist kein Nebensatz-Signal.'},
+    {type:'classify', instruction:'Nebensatz-Signal oder nicht?', cats:['Nebensatz-Signal','kein Signal'], items:[
+      {text:'bevor', cat:'Nebensatz-Signal'},
+      {text:'sondern', cat:'kein Signal'},
+      {text:'seitdem', cat:'Nebensatz-Signal'}
+    ]},
+    {type:'comma', text:'Die Katze versteckt sich{,} wenn der Staubsauger läuft.', explain:'Nebensatz hinten → Komma.'},
+    {type:'gap', text:'Ich hoffe, ___ wir das Finale erreichen.', options:['dass','das'], correct:'dass', explain:'Leitet einen Nebensatz ein, nicht ersetzbar durch „dieses“ → dass.'}
+  ],
+  exkurs:{
+    title:'Exkurs: das oder dass?',
+    text:'Trick: Kannst du das Wort durch „dieses“ ersetzen? Dann schreibst du „das“. Leitet es nur einen Nebensatz ein? Dann „dass“.',
+    tasks:[
+      {type:'gap', text:'Ich glaube, ___ es heute noch regnet.', options:['dass','das'], correct:'dass', explain:'Nebensatz-Einleiter, nicht ersetzbar durch „dieses“.'},
+      {type:'gap', text:'___ Fahrrad dort gehört meinem Bruder.', options:['Dass','Das'], correct:'Das', explain:'Ersetzbar durch „dieses Fahrrad“ → das.'},
+      {type:'gap', text:'Sie war so leise, ___ niemand sie hörte.', options:['dass','das'], correct:'dass', explain:'Nebensatz-Einleiter → dass.'}
+    ]
+  },
+  test:[
+    {type:'comma', text:'Wir gehen schwimmen{,} wenn die Sonne scheint.', hint:'„wenn“ leitet einen Nebensatz ein.', explain:'Komma vor dem Nebensatz.'},
+    {type:'comma', text:'Während das Publikum applaudierte{,} verbeugte sich die Band.', hint:'Nebensatz steht vorn.', explain:'Komma nach dem vorangestellten Nebensatz.'},
+    {type:'comma', text:'Der Trainer{,} obwohl er müde war{,} feuerte das Team weiter an.', hint:'Der Nebensatz steckt mitten im Satz.', explain:'Eingeschoben → zwei Kommas.'},
+    {type:'comma', text:'Sie rannten los{,} sobald das Startsignal ertönte{,} und erreichten das Ziel als Erste.', hint:'Zwei Stellen prüfen: Nebensatz und „und“.', explain:'Komma vor „sobald“-Satz, kein Komma vor „und“.'},
+    {type:'gap', text:'Ich weiß nicht, ___ er heute kommt.', options:['dass','das'], hint:'Nicht ersetzbar durch „dieses“.', correct:'dass', explain:'Nebensatz-Einleiter → dass.'},
+    {type:'classify', instruction:'Nebensatz-Signal?', cats:['Nebensatz-Signal','kein Signal'], items:[
+      {text:'damit', cat:'Nebensatz-Signal'},
+      {text:'sowie', cat:'kein Signal'}
+    ], hint:'Denk an weil, obwohl, wenn, als, damit, sodass, nachdem, bevor.'}
+  ]
+},
+{
+  id:'m3', color:'sky', icon:'🔎',
+  title:'Relativsätze',
+  subtitle:'der, die, das, welcher … — nähere Angaben mit Komma',
+  regel:[
+    "Ein <b>Relativsatz</b> beginnt meist mit <b>der, die, das, dessen, deren, welcher</b> und beschreibt ein Nomen näher.",
+    "Relativsätze werden <b>immer</b> durch Komma(s) abgetrennt.",
+    "Steht der Relativsatz mitten im Satz, stehen <b>zwei</b> Kommas."
+  ],
+  merksatz:"Relativsatz erkannt? → Immer Komma davor und ggf. danach!",
+  einstieg:{
+    type:'classify',
+    instruction:'🎮 Passt das Relativpronomen zum Bezugswort?',
+    cats:['der','die','das'],
+    items:[
+      {text:'der Torwart', cat:'der'},
+      {text:'die Mannschaft', cat:'die'},
+      {text:'das Spiel', cat:'das'},
+      {text:'der Kanal', cat:'der'},
+      {text:'die Katze', cat:'die'},
+      {text:'das Pferd', cat:'das'}
+    ]
+  },
+  stufen:[
+    [
+      {type:'comma', text:'Das ist der Torwart{,} der den Elfmeter gehalten hat.', explain:'Relativsatz hinten → Komma davor.'},
+      {type:'comma', text:'Ich mag die Serie{,} die gerade auf YouTube trendet.', explain:'Relativsatz hinten → Komma davor.'},
+      {type:'comma', text:'Das Pferd{,} das im Stall steht{,} heißt Luna.', explain:'Eingeschoben → zwei Kommas.'}
+    ],
+    [
+      {type:'comma', text:'Der Streamer{,} dessen Kanal explodiert ist{,} lud alle Fans zum Treffen ein.', explain:'Eingeschoben → zwei Kommas.'},
+      {type:'comma', text:'Wir besuchten das Museum{,} in dem alte Ritterrüstungen stehen.', explain:'Relativsatz hinten → Komma davor.'},
+      {type:'comma', text:'Meine beste Freundin{,} mit der ich seit der ersten Klasse befreundet bin{,} zieht leider um.', explain:'Eingeschoben → zwei Kommas.'}
+    ],
+    [
+      {type:'comma', text:'Der Trainer{,} der uns motiviert{,} glaubt fest daran{,} dass wir gewinnen.', explain:'Relativsatz eingeschoben (2 Kommas) + dass-Satz hinten (1 Komma).'},
+      {type:'comma', text:'Die Spielerin{,} die im Finale traf{,} wurde von allen gefeiert{,} weil sie so lange verletzt war.', explain:'Relativsatz eingeschoben (2 Kommas) + weil-Satz hinten (1 Komma).'},
+      {type:'comma', text:'Das Video{,} das über zehn Millionen Klicks hat{,} zeigt einen Hund{,} der Skateboard fährt.', explain:'Zwei Relativsätze, je mit eigenen Kommas.'}
+    ]
+  ],
+  pool:[
+    {type:'comma', text:'Kennst du das Lied{,} das gerade überall läuft?', explain:'Relativsatz → Komma davor.'},
+    {type:'mc', q:'Womit beginnt meistens ein Relativsatz?', options:['und, oder','der, die, das','weil, obwohl'], correct:1, explain:'Relativpronomen: der, die, das, welcher, dessen, deren.'},
+    {type:'classify', instruction:'Welches Relativpronomen passt?', cats:['der','die','das'], items:[
+      {text:'der Streamer', cat:'der'},
+      {text:'die Freundin', cat:'die'},
+      {text:'das Video', cat:'das'}
+    ]},
+    {type:'comma', text:'Der Hund{,} der im Park spielt{,} gehört meiner Nachbarin.', explain:'Eingeschoben → zwei Kommas.'},
+    {type:'gap', text:'___ Spannende an diesem Film hat mich total gefesselt.', options:['Das','das'], correct:'Das', explain:'Nominalisiertes Adjektiv (Das Spannende) → großschreiben.'}
+  ],
+  exkurs:{
+    title:'Exkurs: Großschreibung von Nominalisierungen',
+    text:'Wenn ein Adjektiv wie ein Nomen benutzt wird (oft nach „das, etwas, viel, nichts“), schreibt man es groß.',
+    tasks:[
+      {type:'gap', text:'Ich mag das ___ an diesem Buch.', options:['Spannende','spannende'], correct:'Spannende', explain:'Nominalisiert (das Spannende) → groß.'},
+      {type:'gap', text:'Das war ein ___ Buch.', options:['spannendes','Spannendes'], correct:'spannendes', explain:'Hier ist es ein normales Adjektiv → klein.'},
+      {type:'gap', text:'Es gibt nichts ___, das ich lieber mag.', options:['Schöneres','schöneres'], correct:'Schöneres', explain:'Nominalisiert nach „nichts“ → groß.'}
+    ]
+  },
+  test:[
+    {type:'comma', text:'Das ist die App{,} die mir mein Bruder empfohlen hat.', hint:'Relativsatz mit „die“ hinten.', explain:'Komma vor dem Relativsatz.'},
+    {type:'comma', text:'Der Spieler{,} der das Siegtor schoss{,} wurde zum Held der Nacht.', hint:'Der Relativsatz steckt mittendrin.', explain:'Eingeschoben → zwei Kommas.'},
+    {type:'comma', text:'Wir schauten uns das Tier an{,} dessen Fell so glänzte.', hint:'„dessen“ ist auch ein Relativpronomen.', explain:'Komma vor dem Relativsatz.'},
+    {type:'comma', text:'Meine Cousine{,} die in Hamburg wohnt{,} kommt am Wochenende zu Besuch{,} weil wir Geburtstag feiern.', hint:'Zwei Nebensatz-Arten in einem Satz!', explain:'Relativsatz eingeschoben (2 Kommas) + weil-Satz (1 Komma).'},
+    {type:'gap', text:'___ Aufregende an dem Ausflug war die Achterbahn.', options:['Das','das'], hint:'Steht hier ein nominalisiertes Adjektiv?', correct:'Das', explain:'Nominalisierung → groß.'},
+    {type:'mc', q:'Wie viele Kommas braucht ein eingeschobener Relativsatz normalerweise?', options:['keins','eins','zwei'], correct:2, hint:'Denk an „davor“ und „danach“.', explain:'Ein eingeschobener Nebensatz braucht zwei Kommas.'}
+  ]
+},
+{
+  id:'m4', color:'grape', icon:'🧩',
+  title:'Objekt- und Subjektsätze',
+  subtitle:'dass-Sätze & indirekte Fragen — auch sie brauchen ein Komma',
+  regel:[
+    "<b>Objektsätze</b> und <b>Subjektsätze</b> sind Nebensätze, die die Stelle eines Objekts oder Subjekts einnehmen.",
+    "Sie werden oft mit <b>dass</b> eingeleitet, oder mit einem Fragewort wie <b>ob, wer, was, wann, warum</b> (indirekte Frage).",
+    "Auch diese Nebensätze werden <b>immer</b> mit Komma abgetrennt."
+  ],
+  merksatz:"dass-Satz oder indirekte Frage? → Auch hier: Komma nicht vergessen!",
+  einstieg:{
+    type:'mc',
+    quickQuestions:[
+      {q:'„Ich glaube, dass wir gewinnen.“ — Was für ein Nebensatz ist das?', options:['Objektsatz','Zeitangabe'], correct:0, explain:'Er beantwortet die Frage „was glaube ich?“ → Objektsatz.'},
+      {q:'„Ob wir pünktlich ankommen, weiß ich nicht.“ — Wo steht hier der Nebensatz?', options:['Am Satzanfang','Ganz hinten'], correct:0, explain:'Der Nebensatz steht vorn und ist hier Subjekt des Satzes.'},
+      {q:'„Niemand wusste, wer das Fenster eingeschlagen hatte.“ — Welches Wort leitet den Nebensatz ein?', options:['wer','hatte'], correct:0, explain:'„wer“ leitet eine indirekte Frage ein.'}
+    ]
+  },
+  stufen:[
+    [
+      {type:'comma', text:'Ich glaube{,} dass wir das Spiel gewinnen.', explain:'dass-Satz → Komma davor.'},
+      {type:'comma', text:'Niemand wusste{,} wer das Fenster eingeschlagen hatte.', explain:'indirekte Frage → Komma davor.'},
+      {type:'comma', text:'Ob wir pünktlich ankommen{,} weiß ich nicht.', explain:'Subjektsatz vorn → Komma danach.'}
+    ],
+    [
+      {type:'comma', text:'Der Lehrer fragte{,} warum wir so spät kämen.', explain:'indirekte Frage → Komma davor.'},
+      {type:'comma', text:'Dass du das geschafft hast{,} freut mich riesig.', explain:'Subjektsatz vorn → Komma danach.'},
+      {type:'comma', text:'Ich weiß nicht{,} ob ich das Level schaffe{,} weil es so schwer ist.', explain:'Zwei Nebensätze, jeweils mit Komma abgetrennt.'}
+    ],
+    [
+      {type:'comma', text:'Dass sie so schnell schwimmen kann{,} überraschte alle{,} die dabei waren.', explain:'Subjektsatz vorn (Komma) + Relativsatz hinten (Komma).'},
+      {type:'comma', text:'Ich vermute{,} dass er lieber zu Hause bleibt{,} weil er sich nicht wohlfühlt.', explain:'dass-Satz + weil-Satz, jeweils mit Komma.'},
+      {type:'comma', text:'Ob das Konzert stattfindet{,} hängt davon ab{,} ob genug Karten verkauft werden.', explain:'Zwei Nebensätze, jeweils mit Komma.'}
+    ]
+  ],
+  pool:[
+    {type:'comma', text:'Ich hoffe{,} dass das Wetter besser wird.', explain:'dass-Satz → Komma.'},
+    {type:'mc', q:'Welches Wort leitet oft einen Objekt- oder Subjektsatz ein?', options:['aber','dass','sowie'], correct:1, explain:'„dass“ ist das typische Einleitewort.'},
+    {type:'gap', text:'Ich bin sicher, ___ das klappt.', options:['dass','das'], correct:'dass', explain:'Nicht ersetzbar durch „dieses“ → dass.'},
+    {type:'comma', text:'Weißt du{,} wann das Konzert beginnt?', explain:'indirekte Frage → Komma.'},
+    {type:'classify', instruction:'Objektsatz oder Subjektsatz?', cats:['Objektsatz','Subjektsatz'], items:[
+      {text:'Ich glaube, dass es klappt. (Nebensatz)', cat:'Objektsatz'},
+      {text:'Dass er kommt, ist sicher. (Nebensatz)', cat:'Subjektsatz'}
+    ]}
+  ],
+  exkurs:{
+    title:'Exkurs: das/dass vertieft',
+    text:'Merke: „dass“ gibt es nur als Nebensatz-Einleiter. „das“ kann Artikel, Pronomen oder Relativpronomen sein und ist durch „dieses“ ersetzbar.',
+    tasks:[
+      {type:'gap', text:'Ich finde es toll, ___ du mitkommst.', options:['dass','das'], correct:'dass', explain:'Nebensatz-Einleiter → dass.'},
+      {type:'gap', text:'Das Buch, ___ du mir geliehen hast, ist super.', options:['dass','das'], correct:'das', explain:'Relativpronomen, ersetzbar durch „welches“ → das.'},
+      {type:'gap', text:'Er sagte, ___ er müde sei.', options:['dass','das'], correct:'dass', explain:'Nebensatz-Einleiter → dass.'}
+    ]
+  },
+  test:[
+    {type:'comma', text:'Ich bin mir sicher{,} dass wir das Turnier gewinnen.', hint:'„dass“-Satz braucht ein Komma.', explain:'Komma vor dem dass-Satz.'},
+    {type:'comma', text:'Keiner wusste{,} wie das Rätsel zu lösen war.', hint:'Indirekte Frage mit „wie“.', explain:'Komma vor der indirekten Frage.'},
+    {type:'comma', text:'Ob der Ausflug stattfindet{,} entscheidet sich morgen.', hint:'Subjektsatz steht vorn.', explain:'Komma nach dem vorangestellten Nebensatz.'},
+    {type:'comma', text:'Ich vermute{,} dass sie zu spät kommt{,} weil der Bus oft Verspätung hat.', hint:'Zwei Nebensätze hintereinander.', explain:'Beide Nebensätze mit Komma abtrennen.'},
+    {type:'gap', text:'Ich glaube, ___ er recht hat.', options:['dass','das'], hint:'Test: durch „dieses“ ersetzbar? Nein!', correct:'dass', explain:'Nebensatz-Einleiter → dass.'},
+    {type:'mc', q:'„Dass du das geschafft hast, freut mich.“ — welche Satzglied-Funktion hat der Nebensatz?', options:['Subjekt','Zeitangabe'], hint:'Frag: Was freut mich?', correct:0, explain:'Er beantwortet „was freut mich?“ → Subjektsatz.'}
+  ]
+},
+{
+  id:'m5', color:'peach', icon:'🎯',
+  title:'Infinitiv- & Partizipialgruppen',
+  subtitle:'um … zu, ohne … zu — und nachgestellte Zusatzinfos',
+  regel:[
+    "<b>Infinitivgruppen</b> mit <b>um … zu, ohne … zu, statt/anstatt … zu</b> werden immer mit Komma abgetrennt.",
+    "<b>Partizipialgruppen</b> (mit einem Partizip wie „erschöpft“, „bejubelt“, „lachend“) werden ebenfalls immer mit Komma abgetrennt.",
+    "Steht die Gruppe mittendrin, stehen wieder <b>zwei</b> Kommas."
+  ],
+  merksatz:"um/ohne/statt … zu oder Partizip-Gruppe erkannt? → Komma setzen!",
+  einstieg:{
+    type:'classify',
+    instruction:'🎮 Wortgruppen-Sammler: Was für eine Gruppe ist das?',
+    cats:['Infinitivgruppe','Partizipialgruppe'],
+    items:[
+      {text:'um den Pokal zu gewinnen', cat:'Infinitivgruppe'},
+      {text:'erschöpft vom langen Spiel', cat:'Partizipialgruppe'},
+      {text:'ohne ein Wort zu sagen', cat:'Infinitivgruppe'},
+      {text:'von allen bejubelt', cat:'Partizipialgruppe'},
+      {text:'statt zu Hause zu bleiben', cat:'Infinitivgruppe'},
+      {text:'laut lachend', cat:'Partizipialgruppe'}
+    ]
+  },
+  stufen:[
+    [
+      {type:'comma', text:'Er trainierte hart{,} um den Pokal zu gewinnen.', explain:'um…zu-Gruppe hinten → Komma davor.'},
+      {type:'comma', text:'Sie verließ das Stadion{,} ohne ein Wort zu sagen.', explain:'ohne…zu-Gruppe hinten → Komma davor.'},
+      {type:'comma', text:'Von allen bejubelt{,} betrat die Mannschaft das Spielfeld.', explain:'Partizipialgruppe vorn → Komma danach.'}
+    ],
+    [
+      {type:'comma', text:'Statt ins Kino zu gehen{,} blieben wir zu Hause und spielten.', explain:'statt…zu-Gruppe vorn → Komma danach.'},
+      {type:'comma', text:'Der Torwart{,} erschöpft vom langen Spiel{,} sank auf den Rasen.', explain:'Eingeschoben → zwei Kommas.'},
+      {type:'comma', text:'Um pünktlich zu sein{,} rannte Ben die letzten hundert Meter.', explain:'um…zu-Gruppe vorn → Komma danach.'}
+    ],
+    [
+      {type:'comma', text:'Erschöpft{,} aber glücklich{,} überquerte die Läuferin die Ziellinie{,} um ihren größten Traum zu erfüllen.', explain:'Partizipialgruppe eingeschoben (2 Kommas) + um…zu-Gruppe hinten (1 Komma).'},
+      {type:'comma', text:'Um keine Zeit zu verlieren{,} sprintete er los{,} ohne sich umzuschauen.', explain:'um…zu-Gruppe vorn (Komma) + ohne…zu-Gruppe hinten (Komma).'},
+      {type:'comma', text:'Von der Menge angefeuert{,} kämpfte die Mannschaft weiter{,} statt aufzugeben.', explain:'Partizipialgruppe vorn (Komma) + statt…zu-Gruppe hinten (Komma).'}
+    ]
+  ],
+  pool:[
+    {type:'comma', text:'Um das Level zu schaffen{,} übte er stundenlang.', explain:'um…zu-Gruppe vorn → Komma.'},
+    {type:'mc', q:'Welche Wortgruppe braucht IMMER ein Komma?', options:['und danach','um … zu','oder auch'], correct:1, explain:'„um…zu“-Gruppen stehen immer mit Komma.'},
+    {type:'classify', instruction:'Infinitiv- oder Partizipialgruppe?', cats:['Infinitivgruppe','Partizipialgruppe'], items:[
+      {text:'ohne zu zögern', cat:'Infinitivgruppe'},
+      {text:'völlig erschöpft', cat:'Partizipialgruppe'}
+    ]},
+    {type:'comma', text:'Lachend{,} sprang der Hund ins Wasser.', explain:'Partizipialgruppe vorn → Komma.'},
+    {type:'gap', text:'Ich bitte ___, mir zu antworten.', options:['Sie','sie'], correct:'Sie', explain:'Höfliche Anrede „Sie“ wird immer großgeschrieben.'}
+  ],
+  exkurs:{
+    title:'Exkurs: die höfliche Anrede',
+    text:'Die Anredepronomen „Sie“, „Ihnen“ und „Ihr“ (in Briefen/Nachrichten) werden großgeschrieben, wenn man jemanden höflich anspricht.',
+    tasks:[
+      {type:'gap', text:'Könnten ___ mir bitte helfen?', options:['Sie','sie'], correct:'Sie', explain:'Höfliche Anrede → groß.'},
+      {type:'gap', text:'Ich schreibe ___, um mich zu bewerben.', options:['Ihnen','ihnen'], correct:'Ihnen', explain:'Höfliche Anrede → groß.'},
+      {type:'gap', text:'Vielen Dank für ___ schnelle Antwort.', options:['Ihre','ihre'], correct:'Ihre', explain:'Höfliches Possessivpronomen → groß.'}
+    ]
+  },
+  test:[
+    {type:'comma', text:'Sie schloss die Augen{,} um sich besser zu konzentrieren.', hint:'um…zu-Gruppe hinten.', explain:'Komma vor der um…zu-Gruppe.'},
+    {type:'comma', text:'Angetrieben vom lauten Jubel{,} lief sie ihre schnellste Zeit.', hint:'Partizipialgruppe vorn.', explain:'Komma nach der vorangestellten Partizipialgruppe.'},
+    {type:'comma', text:'Der Spieler{,} völlig außer Atem{,} setzte sich auf die Bank.', hint:'Die Gruppe steckt mittendrin.', explain:'Eingeschoben → zwei Kommas.'},
+    {type:'comma', text:'Um nicht zu spät zu kommen{,} nahm er sein Rad{,} statt zu Fuß zu gehen.', hint:'Zwei Infinitivgruppen in einem Satz.', explain:'Beide Gruppen mit Komma abtrennen.'},
+    {type:'gap', text:'Wir würden uns freuen, ___ bald wiederzusehen.', options:['Sie','sie'], hint:'Ist das eine höfliche Anrede?', correct:'Sie', explain:'Höfliche Anrede → groß.'},
+    {type:'mc', q:'Wie viele Kommas braucht eine eingeschobene Partizipialgruppe?', options:['keins','eins','zwei'], hint:'Wie beim eingeschobenen Nebensatz.', correct:2, explain:'Eingeschoben → zwei Kommas.'}
+  ]
+}
+];
+
+const FINAL_TEST = [
+  {type:'comma', text:'Paul zockt am Handy{,} Lea liest ein Buch.', hint:'Kein Verbindungswort → Komma.', explain:'Satzreihe ohne Konjunktion → Komma.'},
+  {type:'comma', text:'Das Konzert beginnt gleich{x} und alle Fans jubeln schon.', hint:'„und“ verbindet zwei Hauptsätze.', explain:'„und“ → kein Komma.'},
+  {type:'comma', text:'Ich spiele heute nicht{,} weil mein Controller kaputt ist.', hint:'„weil“ leitet einen Nebensatz ein.', explain:'Adverbialsatz → Komma.'},
+  {type:'comma', text:'Der Hund{,} weil er so aufgeregt war{,} rannte im Kreis.', hint:'Der Nebensatz steckt mittendrin.', explain:'Eingeschobener Nebensatz → zwei Kommas.'},
+  {type:'comma', text:'Das ist der Torwart{,} der den Elfmeter gehalten hat.', hint:'Relativsatz mit „der“.', explain:'Relativsatz → Komma davor.'},
+  {type:'comma', text:'Der Streamer{,} dessen Kanal explodiert ist{,} lud alle Fans ein.', hint:'Relativsatz mittendrin.', explain:'Eingeschoben → zwei Kommas.'},
+  {type:'comma', text:'Ich glaube{,} dass wir das Spiel gewinnen.', hint:'„dass“-Satz.', explain:'Objektsatz → Komma.'},
+  {type:'comma', text:'Ob wir pünktlich ankommen{,} weiß ich nicht.', hint:'Subjektsatz vorn.', explain:'Komma nach dem vorangestellten Nebensatz.'},
+  {type:'comma', text:'Er trainierte hart{,} um den Pokal zu gewinnen.', hint:'um…zu-Gruppe.', explain:'Infinitivgruppe → Komma.'},
+  {type:'comma', text:'Von allen bejubelt{,} betrat die Mannschaft das Spielfeld.', hint:'Partizipialgruppe vorn.', explain:'Komma nach der vorangestellten Gruppe.'},
+  {type:'gap', text:'Ich weiß nicht, ___ er heute kommt.', options:['dass','das'], hint:'Nicht ersetzbar durch „dieses“.', correct:'dass', explain:'Nebensatz-Einleiter → dass.'},
+  {type:'gap', text:'Könnten ___ mir bitte helfen?', options:['Sie','sie'], hint:'Höfliche Anrede.', correct:'Sie', explain:'Höfliche Anrede → groß.'},
+  {type:'classify', instruction:'Welches Schlusszeichen passt?', cats:['Punkt (.)','Fragezeichen (?)','Ausrufezeichen (!)'], hint:'Frage, Aussage oder Ausruf?', items:[
+    {text:'Kommst du mit ins Kino', cat:'Fragezeichen (?)'},
+    {text:'Lauf schneller', cat:'Ausrufezeichen (!)'},
+    {text:'Ich bin heute müde', cat:'Punkt (.)'}
+  ]}
+];
+
+/* =========================================================
+   FORTSCHRITT (localStorage)
+   ========================================================= */
+const STORAGE_KEY = 'sw7c_progress_v1';
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  }catch(e){ return {}; }
+}
+function saveProgress(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }catch(e){}
+}
+let progress = loadProgress();
+function markVisited(id){
+  progress[id] = progress[id] || {};
+  progress[id].visited = true;
+  saveProgress();
+}
+function markTaskDone(moduleId, key){
+  progress[moduleId] = progress[moduleId] || {};
+  progress[moduleId].taskDone = progress[moduleId].taskDone || {};
+  if(!progress[moduleId].taskDone[key]){
+    progress[moduleId].taskDone[key] = true;
+    saveProgress();
+  }
+}
+function saveScore(id, levelId, score, total){
+  progress[id] = progress[id] || {};
+  progress[id].scores = progress[id].scores || {};
+  const prev = progress[id].scores[levelId];
+  if(!prev || score > prev.score){
+    progress[id].scores[levelId] = {score, total};
+  }
+  saveProgress();
+}
+function resetProgress(){
+  if(confirm('Möchtest du wirklich deinen gesamten Fortschritt löschen?')){
+    localStorage.removeItem(STORAGE_KEY);
+    progress = {};
+    goHome();
+  }
+}
+
+// Erzeugt eine feste Liste eindeutiger Schlüssel für ALLE Übungsaufgaben eines Moduls
+// (Einstieg, Anwenden-Stufen, Übungspool, Exkurs) — unabhängig vom Testbereich.
+function enumerateModuleTasks(m){
+  const keys = [];
+  if(m.einstieg){
+    if(m.einstieg.quickQuestions){
+      m.einstieg.quickQuestions.forEach((q,i)=> keys.push('einstieg_q'+i));
+    } else if(m.einstieg.type==='classify'){
+      keys.push('einstieg_classify');
+    }
+  }
+  if(m.stufen){
+    m.stufen.forEach((tasks,s)=>{
+      tasks.forEach((t,i)=> keys.push('stufe'+s+'_'+i));
+    });
+  }
+  if(m.pool){
+    m.pool.forEach((t,i)=> keys.push('pool_'+i));
+  }
+  if(m.exkurs){
+    m.exkurs.tasks.forEach((t,i)=> keys.push('exkurs_'+i));
+  }
+  return keys;
+}
+
+// Ein Modul gilt nur dann als abgeschlossen, wenn WIRKLICH jede Übungsaufgabe
+// mindestens einmal richtig gelöst wurde UND (falls vorhanden) der Modultest
+// in mindestens einer Niveaustufe mit voller Punktzahl bestanden wurde.
+function moduleProgressInfo(m){
+  const keys = enumerateModuleTasks(m);
+  const p = progress[m.id] || {};
+  const doneCount = keys.filter(k => p.taskDone && p.taskDone[k]).length;
+  const testPassed = !m.test ? true : !!(p.scores && LEVELS.some(l => p.scores[l.id] && p.scores[l.id].score === p.scores[l.id].total));
+  const complete = doneCount === keys.length && testPassed && keys.length > 0;
+  const totalUnits = keys.length + (m.test ? 1 : 0);
+  const doneUnits = doneCount + (m.test && testPassed ? 1 : 0);
+  const pct = totalUnits ? Math.round((doneUnits/totalUnits)*100) : 0;
+  return {doneCount, total: keys.length, testPassed, complete, pct};
+}
+function isModuleComplete(m){ return moduleProgressInfo(m).complete; }
+
+function overallPct(){
+  const all = [INTRO, ...MODULES];
+  const done = all.filter(m => isModuleComplete(m)).length;
+  return Math.round((done/all.length)*100);
+}
+
+/* =========================================================
+   TASK-ENGINE
+   ========================================================= */
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+function renderTask(task, opts){
+  opts = opts || {};
+  const wrap = el('div','task');
+  const alreadyDone = !!(opts.moduleId && opts.taskKey && progress[opts.moduleId] && progress[opts.moduleId].taskDone && progress[opts.moduleId].taskDone[opts.taskKey]);
+  if(alreadyDone){
+    wrap.classList.add('task-mastered');
+    const badge = el('span','mastered-badge','✓ gemeistert');
+    wrap.appendChild(badge);
+  }
+  let getCorrect, reveal, hasAnswer = ()=>true;
+
+  if(task.type === 'comma'){
+    wrap.appendChild(el('span','tag','Kommas setzen'));
+    const qp = el('p','qtext');
+    const parts = task.text.split(/\{([,x])\}/);
+    const slots = [];
+    parts.forEach(p=>{
+      if(p===','||p==='x'){
+        const btn = el('button','slot');
+        btn.type='button';
+        btn.dataset.required = p===',' ? '1':'0';
+        btn.dataset.active = '0';
+        btn.textContent = '⎵';
+        btn.addEventListener('click', ()=>{
+          const active = btn.dataset.active === '1';
+          btn.dataset.active = active ? '0':'1';
+          btn.textContent = active ? '⎵' : ',';
+          btn.classList.toggle('active', !active);
+        });
+        qp.appendChild(btn);
+        slots.push(btn);
+      } else {
+        qp.appendChild(document.createTextNode(p));
+      }
+    });
+    wrap.appendChild(qp);
+    getCorrect = ()=> slots.every(s => (s.dataset.active==='1') === (s.dataset.required==='1'));
+    reveal = ()=>{
+      slots.forEach(s=>{
+        s.disabled = true;
+        if(s.dataset.required==='1' && s.dataset.active!=='1'){ s.classList.add('should'); s.textContent=','; }
+        else if(s.dataset.required==='0' && s.dataset.active==='1'){ s.classList.add('wrong'); }
+        else if(s.dataset.required==='1'){ s.classList.add('should'); }
+      });
+    };
+  }
+
+  else if(task.type === 'gap'){
+    wrap.appendChild(el('span','tag','Lücke füllen'));
+    const qp = el('p','qtext');
+    const bits = task.text.split('___');
+    qp.appendChild(document.createTextNode(bits[0]));
+    const gapHolder = el('span');
+    qp.appendChild(gapHolder);
+    qp.appendChild(document.createTextNode(bits[1]||''));
+    wrap.appendChild(qp);
+    const row = el('div','pill-row');
+    let selected = null;
+    const pillBtns = [];
+    task.options.forEach(opt=>{
+      const b = el('button','pill', opt);
+      b.type='button';
+      b.addEventListener('click', ()=>{
+        pillBtns.forEach(x=>x.classList.remove('selected'));
+        b.classList.add('selected');
+        selected = opt;
+      });
+      pillBtns.push(b);
+      row.appendChild(b);
+    });
+    wrap.appendChild(row);
+    getCorrect = ()=> selected === task.correct;
+    hasAnswer = ()=> selected !== null;
+    reveal = ()=>{
+      pillBtns.forEach(b=>{
+        b.disabled = true;
+        if(b.textContent === task.correct) b.classList.add('correct-mark');
+        else if(b.classList.contains('selected')) b.classList.add('wrong-mark');
+      });
+    };
+  }
+
+  else if(task.type === 'mc'){
+    wrap.appendChild(el('span','tag','Multiple Choice'));
+    wrap.appendChild(el('p','qtext', task.q));
+    const list = el('div','opt-list');
+    const letters = ['A','B','C','D'];
+    let selected = -1;
+    const optBtns = [];
+    task.options.forEach((opt,i)=>{
+      const b = el('button','opt');
+      b.type='button';
+      b.innerHTML = '<span class="letter">'+letters[i]+'</span><span>'+opt+'</span>';
+      b.addEventListener('click', ()=>{
+        optBtns.forEach(x=>x.classList.remove('selected'));
+        b.classList.add('selected');
+        selected = i;
+      });
+      optBtns.push(b);
+      list.appendChild(b);
+    });
+    wrap.appendChild(list);
+    getCorrect = ()=> selected === task.correct;
+    hasAnswer = ()=> selected !== -1;
+    reveal = ()=>{
+      optBtns.forEach((b,i)=>{
+        b.disabled = true;
+        if(i===task.correct) b.classList.add('correct-mark');
+        else if(i===selected) b.classList.add('wrong-mark');
+      });
+    };
+  }
+
+  else if(task.type === 'classify'){
+    wrap.appendChild(el('span','tag','Zuordnen'));
+    if(task.instruction) wrap.appendChild(el('p','qtext', task.instruction));
+    const answers = {};
+    const rows = [];
+    task.items.forEach((item,i)=>{
+      const box = el('div','classify-item');
+      box.appendChild(el('div','itext', item.text));
+      const catRow = el('div','cat-row');
+      const btns = [];
+      task.cats.forEach(cat=>{
+        const b = el('button','cat-btn', cat);
+        b.type='button';
+        b.addEventListener('click', ()=>{
+          btns.forEach(x=>x.classList.remove('selected'));
+          b.classList.add('selected');
+          answers[i] = cat;
+        });
+        btns.push(b);
+        catRow.appendChild(b);
+      });
+      box.appendChild(catRow);
+      wrap.appendChild(box);
+      rows.push({item, btns});
+    });
+    getCorrect = ()=> task.items.every((item,i)=> answers[i] === item.cat);
+    hasAnswer = ()=> task.items.every((item,i)=> answers[i] !== undefined);
+    reveal = ()=>{
+      rows.forEach((row)=>{
+        row.btns.forEach(b=>{
+          b.disabled = true;
+          if(b.textContent === row.item.cat) b.classList.add('correct-mark');
+          else if(b.classList.contains('selected')) b.classList.add('wrong-mark');
+        });
+      });
+    };
+  }
+
+  if(opts.showHint && task.hint){
+    wrap.appendChild(el('div','hint-box','💡 <span>'+task.hint+'</span>'));
+  }
+
+  if(opts.practice){
+    const actions = el('div','task-actions');
+    const checkBtn = el('button','btn ghost','Prüfen');
+    const fb = el('div','feedback');
+    actions.appendChild(checkBtn);
+    actions.appendChild(fb);
+    wrap.appendChild(actions);
+    const explainBox = el('div','explain', task.explain||'');
+    wrap.appendChild(explainBox);
+    checkBtn.addEventListener('click', ()=>{
+      if(!hasAnswer()){ return; }
+      const ok = getCorrect();
+      fb.style.display='flex';
+      explainBox.style.display='block';
+      if(ok){
+        fb.className='feedback ok';
+        fb.textContent='✓ Richtig, super gemacht!';
+        burstConfetti(6);
+        if(opts.moduleId && opts.taskKey){
+          markTaskDone(opts.moduleId, opts.taskKey);
+          if(opts.onProgress) opts.onProgress();
+        }
+      } else {
+        fb.className='feedback bad';
+        fb.textContent='✗ Noch nicht ganz — versuch es gern nochmal.';
+      }
+    });
+  }
+
+  return {wrap, getCorrect, reveal, hasAnswer};
+}
+
+function burstConfetti(n){
+  const host = document.getElementById('confetti');
+  const colors = ['#2EC4B6','#FFC93C','#4D96FF','#9B5DE5','#FF8C42','#FF6B6B','#06D6A0'];
+  for(let i=0;i<n;i++){
+    const c = document.createElement('div');
+    c.className='confetto';
+    c.style.left = Math.random()*100+'vw';
+    c.style.background = colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDuration = (2.2+Math.random()*1.6)+'s';
+    c.style.borderRadius = Math.random()>0.5 ? '50%':'2px';
+    host.appendChild(c);
+    setTimeout(()=>c.remove(), 4200);
+  }
+}
+
+/* =========================================================
+   VIEWS / ROUTING
+   ========================================================= */
+const app = document.getElementById('app');
+
+function goHome(){ location.hash = '#home'; }
+
+function scoreBadgeRow(id){
+  const p = progress[id];
+  if(!p || !p.scores) return '';
+  const icons = {gruen:'🟢',gelb:'🟡',rot:'🔴'};
+  let out = '';
+  LEVELS.forEach(l=>{
+    const s = p.scores[l.id];
+    if(s) out += '<span style="margin-right:8px;">'+icons[l.id]+' '+s.score+'/'+s.total+'</span>';
+  });
+  return out;
+}
+
+function renderHome(){
+  const pct = overallPct();
+  app.innerHTML = '';
+
+  const hero = el('div','hero');
+  const kommi = buildKommi(false);
+  hero.appendChild(kommi);
+  const heroText = el('div');
+  heroText.innerHTML = '<div class="eyebrow">7c · Deutsch (Sc)</div><h1>Satzzeichen-Werkstatt</h1><p>Willkommen! Hier lernst und übst du Kommasetzung bei Satzreihen und Satzgefügen — plus ein bisschen das/dass, Groß-/Kleinschreibung und die höfliche Anrede. Klick dich durch die Module und werde zum Komma-Profi. 🛠️</p>';
+  hero.appendChild(heroText);
+  const pw = el('div','progress-wrap');
+  pw.innerHTML = '<div class="ring" style="--pct:'+pct+'"><span>'+pct+'%</span></div><small>geschafft</small>';
+  hero.appendChild(pw);
+  app.appendChild(hero);
+
+  const lbl = el('div','section-label');
+  lbl.innerHTML = '<h3 style="margin:0;">📚 Module</h3><div class="line"></div>';
+  app.appendChild(lbl);
+
+  const grid = el('div','grid');
+  grid.appendChild(moduleCard(INTRO, true));
+  MODULES.forEach(m=> grid.appendChild(moduleCard(m, false)));
+  app.appendChild(grid);
+
+  const lbl2 = el('div','section-label');
+  lbl2.innerHTML = '<h3 style="margin:0;">🏁 Abschluss</h3><div class="line"></div>';
+  app.appendChild(lbl2);
+
+  const finalGrid = el('div','grid');
+  const fc = el('div','card c-ink');
+  fc.innerHTML = '<div class="icon">🏆</div><h3>Großer Abschlusstest</h3><p class="desc">Alle Regeln gemischt — zeig, was du drauf hast! In drei Niveaustufen.</p>';
+  const goBtn = el('button','go','Test starten');
+  goBtn.addEventListener('click', ()=> location.hash = '#final');
+  fc.appendChild(goBtn);
+  const scoreLine = el('div');
+  scoreLine.style.fontSize='12.5px'; scoreLine.style.marginTop='2px';
+  scoreLine.innerHTML = scoreBadgeRow('final');
+  fc.appendChild(scoreLine);
+  finalGrid.appendChild(fc);
+  app.appendChild(finalGrid);
+}
+
+function moduleCard(m, isIntro){
+  const card = el('div','card c-'+m.color);
+  const info = moduleProgressInfo(m);
+  const badge = info.complete ? '✓' : (info.pct>0 ? '…' : '✎');
+  card.innerHTML = '<div class="icon">'+m.icon+'</div>'+
+    '<div class="stamp">'+badge+'</div>'+
+    '<h3>'+m.title+'</h3>'+
+    '<p class="desc">'+m.subtitle+'</p>';
+  const bar = el('div','mini-bar');
+  bar.innerHTML = '<i style="width:'+info.pct+'%"></i>';
+  card.appendChild(bar);
+  const btn = el('button','go', isIntro ? "Los geht's" : (info.complete ? 'Nochmal üben' : 'Modul öffnen'));
+  btn.addEventListener('click', ()=> location.hash = '#mod-'+m.id);
+  card.appendChild(btn);
+  const scoreLine = el('div');
+  scoreLine.style.fontSize='12.5px';
+  scoreLine.style.opacity='.95';
+  scoreLine.innerHTML = scoreBadgeRow(m.id) + (info.total>0 ? ' <span>'+info.doneCount+'/'+info.total+' Übungen</span>' : '');
+  card.appendChild(scoreLine);
+  return card;
+}
+
+function buildKommi(small){
+  const k = el('div','kommi'+(small?' small':''));
+  k.innerHTML = '<div class="tail"></div><div class="head"></div><div class="eye l"></div><div class="eye r"></div><div class="mouth"></div>';
+  return k;
+}
+
+function renderModule(m){
+  markVisited(m.id);
+  app.innerHTML = '';
+
+  const back = el('button','back-btn','← Zur Übersicht');
+  back.addEventListener('click', goHome);
+  app.appendChild(back);
+
+  const head = el('div','module-head c-'+m.color);
+  head.innerHTML = '<div style="font-size:38px;">'+m.icon+'</div><div><h2>'+m.title+'</h2><p>'+m.subtitle+'</p></div>';
+  app.appendChild(head);
+
+  const statusBox = el('div','status-box');
+  app.appendChild(statusBox);
+  function refreshStatus(){
+    const info = moduleProgressInfo(m);
+    statusBox.className = 'status-box'+(info.complete?' status-complete':'');
+    let html = '<div class="status-bar"><i style="width:'+info.pct+'%"></i></div>';
+    html += '<div class="status-text">';
+    if(info.total>0) html += '📝 '+info.doneCount+' / '+info.total+' Übungen gemeistert';
+    if(m.test) html += ' · ✅ Test: '+(info.testPassed ? 'bestanden (volle Punktzahl)' : 'noch nicht mit voller Punktzahl bestanden');
+    html += info.complete ? ' · 🎉 <b>Modul abgeschlossen!</b>' : '';
+    html += '</div>';
+    statusBox.innerHTML = html;
+  }
+  refreshStatus();
+
+  const tabs = el('div','tabs');
+  const tabDefs = m.id==='intro'
+    ? [['einstieg','🎮 Einstieg'],['regel','📖 Regel'],['pool','🔄 Übung']]
+    : [['einstieg','🎮 Einstieg'],['regel','📖 Regel'],['anwenden','📈 Anwenden'],['pool','🔄 Übungspool'],['test','✅ Test']];
+  const panels = {};
+  tabDefs.forEach(([key,label])=>{
+    const b = el('button','tab-btn', label);
+    b.addEventListener('click', ()=> switchTab(key));
+    tabs.appendChild(b);
+    panels[key] = b;
+  });
+  app.appendChild(tabs);
+
+  const panelHost = el('div');
+  app.appendChild(panelHost);
+
+  function switchTab(key){
+    Object.values(panels).forEach(b=>b.classList.remove('active'));
+    panels[key].classList.add('active');
+    panelHost.innerHTML = '';
+    if(key==='einstieg') panelHost.appendChild(buildEinstieg(m, refreshStatus));
+    if(key==='regel') panelHost.appendChild(buildRegel(m, refreshStatus));
+    if(key==='anwenden') panelHost.appendChild(buildAnwenden(m, refreshStatus));
+    if(key==='pool') panelHost.appendChild(buildPool(m, refreshStatus));
+    if(key==='test') panelHost.appendChild(buildTestHost(m, refreshStatus));
+  }
+  switchTab('einstieg');
+}
+
+function buildEinstieg(m, onProgress){
+  const box = el('div','box');
+  box.appendChild(el('h4', null, '🎮 Spielerischer Einstieg'));
+  if(m.einstieg.quickQuestions){
+    m.einstieg.quickQuestions.forEach((q,i)=>{
+      const t = renderTask({type:'mc', q:q.q, options:q.options, correct:q.correct, explain:q.explain}, {practice:true, moduleId:m.id, taskKey:'einstieg_q'+i, onProgress});
+      box.appendChild(t.wrap);
+    });
+  } else if(m.einstieg.type==='classify'){
+    box.appendChild(el('p',null,m.einstieg.instruction));
+    const t = renderTask({type:'classify', cats:m.einstieg.cats, items:m.einstieg.items}, {practice:true, moduleId:m.id, taskKey:'einstieg_classify', onProgress});
+    box.appendChild(t.wrap);
+  }
+  const tip = el('p',null,'<i>Wenn du fertig bist, geh weiter zu „📖 Regel“.</i>');
+  tip.style.opacity='.7'; tip.style.fontSize='14px';
+  box.appendChild(tip);
+  return box;
+}
+
+function buildRegel(m, onProgress){
+  const box = el('div','box');
+  box.appendChild(el('h4', null, '📖 Die Regel'));
+  const rb = el('div','rule-box');
+  (m.regel||[]).forEach(r=> rb.appendChild(el('p',null,r)));
+  if(m.merksatz) rb.appendChild(el('div','merksatz','💡 '+m.merksatz));
+  box.appendChild(rb);
+  if(m.beispiele){
+    box.appendChild(el('h4',null,'Beispiele'));
+    m.beispiele.forEach(b=>{
+      box.appendChild(el('div','example', b.t));
+    });
+  }
+  if(VIDEOS[m.id]){
+    box.appendChild(buildVideoBlock(VIDEOS[m.id], '🎬 Erklärvideo'));
+  }
+  if(m.exkurs){
+    const ex = el('div','exkurs');
+    ex.innerHTML = '<div class="eyebrow">Exkurs</div><h4>'+m.exkurs.title+'</h4><p>'+m.exkurs.text+'</p>';
+    m.exkurs.tasks.forEach((t,i)=>{
+      const rendered = renderTask(t, {practice:true, moduleId:m.id, taskKey:'exkurs_'+i, onProgress});
+      ex.appendChild(rendered.wrap);
+    });
+    if(EXKURS_VIDEOS[m.id]){
+      ex.appendChild(buildVideoBlock(EXKURS_VIDEOS[m.id], '🎬 Passendes Video', true));
+    }
+    box.appendChild(ex);
+  }
+  return box;
+}
+
+function buildVideoBlock(video, label, mini){
+  const wrap = el('div','video-block'+(mini?' mini':''));
+  wrap.innerHTML = '<div class="vlabel">'+label+': '+video.title+'</div>';
+  const frame = el('div','video-frame');
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube-nocookie.com/embed/'+video.id;
+  iframe.title = video.title;
+  iframe.loading = 'lazy';
+  iframe.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture';
+  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+  iframe.setAttribute('allowfullscreen','');
+  frame.appendChild(iframe);
+  wrap.appendChild(frame);
+  return wrap;
+}
+
+function buildAnwenden(m, onProgress){
+  const box = el('div');
+  const info = el('div','box');
+  info.innerHTML = '<h4>📈 Regel anwenden</h4><p>Drei Stufen — von leicht bis anspruchsvoll. Klick auf „Prüfen“, um deine Antwort zu checken.</p>';
+  box.appendChild(info);
+  const stufeNames = ['Leicht','Mittel','Anspruchsvoll'];
+  m.stufen.forEach((tasks,s)=>{
+    const st = el('div','stufe-title');
+    st.innerHTML = '<div class="dot">'+(s+1)+'</div><h4 style="margin:0;">Stufe '+(s+1)+' — '+stufeNames[s]+'</h4>';
+    box.appendChild(st);
+    tasks.forEach((t,i)=>{
+      const rendered = renderTask(t, {practice:true, moduleId:m.id, taskKey:'stufe'+s+'_'+i, onProgress});
+      box.appendChild(rendered.wrap);
+    });
+  });
+  return box;
+}
+
+function buildPool(m, onProgress){
+  const box = el('div');
+  const info = el('div','box');
+  info.innerHTML = '<h4>🔄 Übungspool</h4><p>Gemischte Aufgabentypen zum Trainieren.</p>';
+  box.appendChild(info);
+  m.pool.forEach((t,i)=>{
+    const rendered = renderTask(t, {practice:true, moduleId:m.id, taskKey:'pool_'+i, onProgress});
+    box.appendChild(rendered.wrap);
+  });
+  return box;
+}
+
+function buildTestHost(m, onProgress){
+  const host = el('div');
+  const info = el('div','box');
+  info.innerHTML = '<h4>✅ Modultest</h4><p>Wähle deine Niveaustufe. Die Aufgaben sind gleich — nur die Hilfestellung ändert sich. <b>Wichtig:</b> Für den Modul-Abschluss brauchst du in mindestens einer Stufe die volle Punktzahl.</p>';
+  const lr = el('div','level-row');
+  const btns = [];
+  LEVELS.forEach(l=>{
+    const b = el('button','level-btn l-'+l.id);
+    b.innerHTML = '<h5>'+l.label+'</h5><small>'+l.desc+'</small>';
+    b.addEventListener('click', ()=>{
+      btns.forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      testArea.innerHTML='';
+      testArea.appendChild(buildTestRun(m.test, l.id, m.merksatz, m.id, onProgress));
+    });
+    btns.push(b);
+    lr.appendChild(b);
+  });
+  info.appendChild(lr);
+  host.appendChild(info);
+  const testArea = el('div');
+  host.appendChild(testArea);
+  return host;
+}
+
+function buildTestRun(taskDefs, levelId, merksatz, storeId, onProgress){
+  const wrap = el('div');
+  if(levelId==='gruen' && merksatz){
+    const rb = el('div','rule-box');
+    rb.innerHTML = '<div class="merksatz">💡 Merksatz: '+merksatz+'</div>';
+    wrap.appendChild(rb);
+  }
+  if(levelId==='gelb' && merksatz){
+    const toggle = el('button','btn ghost','📖 Regel noch mal ansehen');
+    const rb = el('div','rule-box');
+    rb.style.display='none';
+    rb.innerHTML = '<div class="merksatz">💡 '+merksatz+'</div>';
+    toggle.addEventListener('click', ()=>{ rb.style.display = rb.style.display==='none' ? 'block':'none'; });
+    wrap.appendChild(toggle);
+    wrap.appendChild(rb);
+  }
+  const showHint = levelId==='gruen';
+  const rendered = taskDefs.map(t=> renderTask(t, {showHint}));
+  rendered.forEach(r=> wrap.appendChild(r.wrap));
+
+  const evalBtn = el('button','btn mint','Test auswerten');
+  wrap.appendChild(evalBtn);
+  const banner = el('div');
+  wrap.appendChild(banner);
+
+  evalBtn.addEventListener('click', ()=>{
+    let score = 0;
+    rendered.forEach(r=>{ if(r.getCorrect()) score++; });
+    const total = rendered.length;
+    saveScore(storeId, levelId, score, total);
+    if(onProgress) onProgress();
+    banner.innerHTML='';
+    const sb = el('div','score-banner');
+    const kommi = buildKommi(true);
+    sb.appendChild(kommi);
+    const txt = el('div');
+    const pct = Math.round(score/total*100);
+    let msg;
+    if(score===total){ msg = 'Perfekt — volle Punktzahl! 🎉'; }
+    else if(pct>=50){ msg = 'Gut unterwegs! Für den Modul-Abschluss brauchst du beim nächsten Versuch die volle Punktzahl.'; }
+    else { msg = 'Übung macht den Meister — schau dir die Regel nochmal an und versuch es erneut.'; }
+    txt.innerHTML = '<h4>'+score+' / '+total+' richtig</h4><small>'+msg+'</small>';
+    sb.appendChild(txt);
+    banner.appendChild(sb);
+    if(score===total) burstConfetti(24);
+    const revealBtn = el('button','btn ghost','Lösungen anzeigen');
+    revealBtn.style.marginTop='12px';
+    revealBtn.addEventListener('click', ()=>{
+      rendered.forEach(r=> r.reveal());
+      revealBtn.disabled = true;
+      revealBtn.textContent = 'Lösungen sind eingeblendet ✓';
+    });
+    banner.appendChild(revealBtn);
+    evalBtn.disabled = true;
+  });
+
+  return wrap;
+}
+
+function renderFinal(){
+  app.innerHTML='';
+  const back = el('button','back-btn','← Zur Übersicht');
+  back.addEventListener('click', goHome);
+  app.appendChild(back);
+
+  const head = el('div','module-head c-ink');
+  head.innerHTML = '<div style="font-size:38px;">🏆</div><div><h2>Großer Abschlusstest</h2><p>Alle fünf Regeln + Rechtschreib-Exkurse gemischt.</p></div>';
+  app.appendChild(head);
+
+  const info = el('div','box');
+  info.innerHTML = '<h4>Wähle deine Niveaustufe</h4>';
+  const lr = el('div','level-row');
+  const btns = [];
+  const testArea = el('div');
+  LEVELS.forEach(l=>{
+    const b = el('button','level-btn l-'+l.id);
+    b.innerHTML = '<h5>'+l.label+'</h5><small>'+l.desc+'</small>';
+    b.addEventListener('click', ()=>{
+      btns.forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      testArea.innerHTML='';
+      testArea.appendChild(buildTestRun(FINAL_TEST, l.id, 'Prüfe bei jedem Nebensatz/jeder Wortgruppe: Muss ich hier ein Komma setzen?', 'final'));
+    });
+    btns.push(b);
+    lr.appendChild(b);
+  });
+  info.appendChild(lr);
+  app.appendChild(info);
+  app.appendChild(testArea);
+}
+
+function route(){
+  const hash = location.hash || '#home';
+  window.scrollTo(0,0);
+  if(hash === '#home' || hash===''){ renderHome(); return; }
+  if(hash === '#final'){ renderFinal(); return; }
+  if(hash.indexOf('#mod-') === 0){
+    const id = hash.replace('#mod-','');
+    if(id==='intro'){ renderModule(INTRO); return; }
+    const m = MODULES.find(x=>x.id===id);
+    if(m){ renderModule(m); return; }
+  }
+  renderHome();
+}
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>
